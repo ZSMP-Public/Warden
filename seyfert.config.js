@@ -1,5 +1,5 @@
 // @ping.ts-check
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config();
 
 const { config } = require('seyfert');
 
