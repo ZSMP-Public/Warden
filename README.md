@@ -1,9 +1,9 @@
 <p align="center">
   <img src="./assets/project/warden.png" alt="Warden" width="40%" />
-  
-  **Link Discord Members with Minecraft | PostgreSQL + Seyfert**
 </p>
-
+<p align="center">
+  <strong>Link Discord Members with Minecraft | PostgreSQL + Seyfert</strong>
+</p>
 ## Preparing the Environment
 In order to use any component of Warden, you'll need to properly setup your environment. How you wish to structure your environment is completely up to you. 
 
