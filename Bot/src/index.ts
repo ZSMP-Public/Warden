@@ -1,5 +1,5 @@
+require('dotenv').config({ path: '../.env' });
 import { Client, ParseClient } from "seyfert";
-x
 const { Pool } = require('pg');
 
 // Initialize the Seyfert Client
