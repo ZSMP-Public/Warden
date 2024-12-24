@@ -11,5 +11,5 @@ yarn-error.log*
 .vscode/*
 package-lock.json
 node_modules
-.idea
+.idea/
 .env
