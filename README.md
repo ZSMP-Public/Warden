@@ -2,59 +2,64 @@
   <img src="./assets/project/warden.png" alt="Warden" width="40%" />
 </p>
 <p align="center">
-  <strong>Link Discord Members with Minecraft | PostgreSQL + Seyfert</strong>
+  <strong>🚀 Link Discord Members with Minecraft | PostgreSQL + Seyfert</strong>
 </p>
-## Preparing the Environment
-In order to use any component of Warden, you'll need to properly setup your environment. How you wish to structure your environment is completely up to you. 
 
+# ⚙️ Setup 
+## 🌍 Preparing the Environment
+In order to use any component of Warden, you'll need to properly set up your environment. How you wish to structure your environment is completely up to you.
 
-### Single Location
-By default, both the database and the bot rely on the same Environmental Variable source file (`.env`) which is perfect if both components will be hosted on the one machine.
+### 🏠 Single Location
+By default, both the database and the bot rely on the same Environmental Variable source file (`.env`), which is perfect if both components will be hosted on the same machine.
 
 If you intend to use the bot and database on one machine, rename `.env.example` to `.env` and edit the details accordingly. Skip the following section.
 
-### Seperate Machine
-If you intend to host them seperately, you'll need to copy the .env file to both locations:
+### 🌐 Separate Machines
+If you intend to host them separately, you'll need to copy the `.env` file to both locations:
    ```bash
    cp .env.example Bot/.env
    cp .env.example Database/.env
    ```
-   Modify the docker-compose.yml to remove the following lines, this will instead use the .env file in the root directory rather than the parent.
+   Modify the `docker-compose.yml` to remove the following lines. This will instead use the `.env` file in the root directory rather than the parent.
    ```yml
     env_file:
      - ../.env
    ```
-   Likewise for both files `seyfert.config.js` and `index.ts` replace the lines: 
+   Likewise, for both files `seyfert.config.js` and `index.ts`, replace the lines:
    ```js
    require('dotenv').config({ path: '../.env' });
    ```
    with:
    ```js
    require('dotenv').config();
-   ````
+   ```
 ---
-_Regardless, it goes without saying you'll need to change your details here afterwards, and ensure both files match._
 
-### Bot
+_🔐 Regardless, make sure you change your details here afterward and ensure both files match._
+
+### 🤖 Bot
 1. You will need to create an application for the Bot instance on the Discord [Developer Portal](https://discord.com/developers/applications) and populate the `TOKEN` in your **env** file with your generated token. 
 
-2. Install all necessary components;
+2. Install all necessary components:
    ```bash
    npm i
    ```
+
 3. Run the bot:
    ```bash
    npm run dev
    ```
- ### Database
-The PostgreSQL Database serves as both the storage, and middleman between the MC Server & Discord Bot, facilitating the connection without requiring an addition Server Port.
 
-This implementation is only as secure as you make it; you'll need to change the Database userrname and password.
+### 🗄️ Database
+The PostgreSQL Database serves as both the storage and middleman between the MC Server & Discord Bot, facilitating the connection without requiring an additional Server Port.
+
+This implementation is only as secure as you make it; you'll need to change the Database username and password.
 
 1. You can start the container, and it will automatically create the schema:
     ```bash
     docker-compose up -d
     ```
+
 2. To verify it worked, you can connect to the database:
     ```bash
     # Connect to the container
@@ -76,3 +81,4 @@ docker-compose down -v
 # Then start again
 docker-compose up -d
 ```
+
