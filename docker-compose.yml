@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  warden:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: warden-bot
+    env_file:
+      - .env
+    volumes:
+      - .:/project
+    restart: unless-stopped
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true
